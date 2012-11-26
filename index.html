@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<title>Ublue jQuery 弹出框 始终垂直于屏幕中间 完美兼容IE6</title>
+<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/Ublue-jQueryDialog.js"></script>
+<style type="text/css">
+*{ margin:0; padding:0;}
+html{ background-image:url(body_bg.jpg);}
+body{ font-size:12px; font-family:Arial; height:2000px;}
+a{ text-decoration:none;}
+
+.popBtn{ display:block; width:100px; margin:0 auto; text-align:center; padding:10px 0; color:#211F1E; border:1px solid #E59300; background:#F2BA00; text-shadow:1px 1px 1px #FAE585; border-radius:2px; box-shadow:0 1px 3px rgba(0,0,0,0.5);}
+.popBtn:hover{ color:#EEC000; border:1px solid #000; background:#1A1818; text-shadow:1px 1px 1px #000;}
+
+.popLayer{ display:none; width:500px; border:2px solid #000; border-bottom:3px solid #000; background:#000; border-radius:2px; box-shadow:0 3px 6px rgba(0,0,0,0.5); position:fixed; left:50%; top:50%; z-index:999; 
+	_top:expression(eval(
+		document.compatMode && document.compatMode=='CSS1Compat') ?
+		documentElement.scrollTop + (document.documentElement.clientHeight- this.offsetHeight)/2 : 
+		document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2
+	);
+}
+.popLayerTit{ width:100%; height:30px; color:#E19E00;margin-bottom:1px; background:#151515;}
+.popLayerTit h2{ padding:5px 10px; font-size:14px; text-shadow:1px 1px 1px #000;}
+.popLayerTit .close{ font-style:normal; cursor:pointer; position:absolute; top:7px; right:7px; text-shadow:0 0 3px rgba(255,213,0,0.8);}
+.popLayerCon{ padding:10px; line-height:20px; color:#D4CFC0; border-top:1px solid #272626; ; background:#1B1919;}
+.popLayerCon p{ text-indent:24px;}
+
+.maskLayer{ display:none; width:100%; height:100%; position:absolute; top:0px; left:0px; background:#DF7A00; opacity:.1;}
+
+.info{ font:14px/30px "Electrolize","Microsoft YaHei",Arial,Tahoma; width:100%; color:#E1A800; text-shadow:1px 1px 1px #000; text-align:center; margin:80px auto;}
+.info a{ color:#E1A800;}
+</style>
+<!--[if IE 6]>
+<style type="text/css">
+body{ background-image:url(about:blank);background-attachment:fixed;}
+.maskLayer{ filter:alpha(opacity=10);}
+</style>
+<![endif]--> 
+</head>
+<body>
+
+<div class="info">
+	<p>Ublue jQuery 弹出框 始终垂直于屏幕中间 完美兼容IE6</p>
+	<p>By www.bluesdream.com <script src="http://s9.cnzz.com/stat.php?id=1734797&web_id=1734797" language="JavaScript"></script></p>
+</div>
+<a class="popBtn" href="javascript:void(0)">Click Me</a>
+
+<div class="popLayer">
+	<div class="popLayerTit">
+		<h2>HTML 5 中的新元素</h2>
+		<i class="close">[ 关闭 ]</i>
+	</div>
+	<div class="popLayerCon">
+		<p>超文本标记语言（HTML）的开发到 1999 年 HTML 4 就停止了。万维网联盟（W3C）把重点转向将 HTML 的底层语法从标准通用标记语言（SGML）改为可扩展标记语言（XML），以及可缩放向量图型（SVG）、XForms 和 MathML 这些全新的标记语言。浏览器厂商则把精力放到选项卡和富站点摘要（RSS）阅读器这类浏览器特性上。Web 设计人员开始学习使用异步 JavaScript + XML（Ajax），在现有的框架下通过层叠样式表（CSS）和 JavaScript™ 语言建立自己的应用程序。但是在接下来的八年中，HTML 本身没有任何变化。</p>
+		<p>最近，它又复活了。三家重要的浏览器厂商 — Apple、Opera 和 Mozilla Foundation — 成立了 Web Hypertext Application Technology Working Group（WhatWG）来开发传统 HTML 的新版本。最近，W3C 也注意到了这些活动，也启动了自己的新一代 HTML 项目，双方的成员有很多是相同的。这两个项目最终很可能合并。虽然很多细节还在争论之中，但下一版本 HTML 的大体轮廓已经清楚了。</p>
+		<p>HTML 5 的设计原则就是在不支持它的浏览器中能够平稳地退化。原因很简单：我们都是这样的 “原始人”。浏览器现在有选项卡、CSS 和 XmlHttpRequest，但是它们的 HTML 显示引擎仍然停留在 1999 年的水平。除了用户量大大增加之外，Web 其实在本质上没什么进步。HTML 5 考虑到了这一点。它目前为 Web 开发人员一些真正的好处，随着浏览器的缓慢升级，页面浏览者会逐渐享受到这些好处。 </p>
+	</div>
+</div>
+<div class="maskLayer"></div>
+
+</body>
+</html>
